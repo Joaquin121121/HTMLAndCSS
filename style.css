@@ -1,0 +1,46 @@
+* { /* El asterisco significa que aplica para todo el html */
+    box-sizing: border-box; /* hace que cuando agregamos margin y padding
+    no afecta las dimensiones del elemento */
+    margin : 0; 
+    padding: 0;
+    /* resetea margenes y padding */
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color:#333
+    /*Le saca el subrayado a los links y les asigna color */
+}
+
+ul {
+    list-style: none; /* Le saca los bullet points a las listas */
+}
+
+img {
+    max-width: 100%; /* Se queda adentro del div que la contiene */
+}
+
+/* Utility Classes */
+/* Dado que hay containers de distintas dimensiones (unos mas angostos
+que otros), creamos subclase dentro de container (small container) */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto; /* Esto hace que el margen left and right = 0, y
+                    que el margen top and bottom sea auto*/
+    padding: 0 15px /* idem */
+}
+
+.container-sm {
+    max-width: 800px;
+    margin: 0 auto; /* Esto hace que el margen left and right = 0, y
+                    que el margen top and bottom sea auto*/
+    padding: 0 15px /* idem */
+}
