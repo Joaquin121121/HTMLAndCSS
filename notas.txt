@@ -1,0 +1,1 @@
+Usa FlexBox para alinear el logo a la izquierda y el menu a la derecha

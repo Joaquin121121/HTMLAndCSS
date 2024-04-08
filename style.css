@@ -27,6 +27,12 @@ img {
     max-width: 100%; /* Se queda adentro del div que la contiene */
 }
 
+/* Navbar */
+.navbar {
+    background: #fff;
+    padding: 20px;
+}
+
 /* Utility Classes */
 /* Dado que hay containers de distintas dimensiones (unos mas angostos
 que otros), creamos subclase dentro de container (small container) */
