@@ -50,3 +50,16 @@ que otros), creamos subclase dentro de container (small container) */
                     que el margen top and bottom sea auto*/
     padding: 0 15px /* idem */
 }
+
+.navbar .container{
+    display:flex;
+    justify-content: space-between;
+}
+.main-menu ul{
+    display:flex;
+
+}
+
+.main-menu ul li{
+    padding:10px;
+}
