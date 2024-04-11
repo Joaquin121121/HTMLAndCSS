@@ -6,7 +6,13 @@
     /* resetea margenes y padding */
 }
 
-body {
+:root{/* Declaro clase (root significa que tiene scope global */
+    --primary-color: #4891ff;
+    --light-color: #f4f4f6;
+    --dark-color: #111;
+}
+
+    body {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -32,6 +38,25 @@ img {
     background: #fff;
     padding: 20px;
 }
+.navbar .container{
+    display:flex;
+    justify-content: space-between;
+}
+.main-menu ul{
+    display:flex;
+
+}
+
+.navbar ul li a{
+    padding: 10px 20px;
+    display: block;
+    transition: 0.5s; /* para que no vaya al color del hover de una sino q transicione */
+    font-weight: 600;
+}
+.navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
 
 /* Utility Classes */
 /* Dado que hay containers de distintas dimensiones (unos mas angostos
@@ -51,15 +76,20 @@ que otros), creamos subclase dentro de container (small container) */
     padding: 0 15px /* idem */
 }
 
-.navbar .container{
-    display:flex;
-    justify-content: space-between;
+/* Button Classes */
+.btn {
+    display: inline-block;
+    padding: 13px 20px;
+    background: var(--light-color); 
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
 }
-.main-menu ul{
-    display:flex;
 
-}
-
-.main-menu ul li{
-    padding:10px;
+.btn:hover {
+    opacity: 0.8;
 }
