@@ -140,6 +140,50 @@ que otros), creamos subclase dentro de container (small container) */
     margin-bottom: 20px;
 }
 
+/* Video */
+
+.video{
+    padding: 10px 0 40px;
+}
+
+.video-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-preview {
+    margin-bottom: 20px;
+}
+
+/* Testimonials */
+
+.testimonials {
+    padding: 40px 0; /* Para que no se vea un espacio feo entre el bloque de arriba y
+                        el heading de testimonials */
+}
+
+.testimonials-heading {
+    width:700px;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: grid;
+/*  grid-template-columns: 1fr 1fr 1fr;Para que cada uno ocupe una fraccion de la pantalla  */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonials .card p:nth-child(2){
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+
+/* Podria haber usado flexbox */
+
+
 /* Text classes */
 
 .text-xxl {
@@ -179,4 +223,35 @@ que otros), creamos subclase dentro de container (small container) */
 
 .text-center {
     text-align: center;
+}
+
+/* Background */
+
+.bg-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.bg-light {
+    background: var(--light-color);
+    color: white;
+}
+
+.bg-dark {
+    background: var(--dark-color);
+    color: white;
+}
+
+.bg-black {
+    background: #000;
+    color: white;
+}
+
+/* Card */
+
+.card {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
 }
