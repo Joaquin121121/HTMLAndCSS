@@ -66,6 +66,163 @@ img {
     margin-left: 10px;
 }
 
+/* Pricing */
+
+
+.pricing .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.pricing .pricing-card-subheading { /* Es buena practica prefixear (en este caso con .pricing) */
+    margin-bottom: 30px;
+}
+
+.pricing .pricing-card-price{
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.pricing ul {
+    margin: 30px 0 /* 30 top and bottom 0 left and right */
+}
+
+.card-free{
+    margin-top: 80px;
+    padding-top: 20;
+    margin-bottom: 40px;
+}
+
+.pricing-card-body-premium{
+    margin: 30px 20px
+} 
+
+.pricing ul li {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.pricing ul li i {
+    margin-right: 10px;
+}
+
+.pricing .pricing-footer {
+    margin: 30px 0;
+}
+
+/* FAQ */
+
+.faq {
+    padding: 40px 0; 
+}
+
+.faq-group {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.faq .faq-group .faq-group-header {
+    padding: 20px 0;
+    margin: 15px 0;
+    position: relative;/* Esto se hace pq el icono debe ser posicionado 
+                        como absolute dentro del grupo-header. Para ello, debemos
+                        hacer el group-header position relative. Queremos posicionar el icono como absoluto para poder elegir exactamente donde queremos el icono    */
+}
+
+.faq .faq-group .faq-group-header h4 {
+    font-weight: 600;
+    width: 95%; /* Para que no se choque con el icono */
+}
+
+.faq .faq-group .faq-group-header i {
+    position: absolute;
+    right: 0; /* Para que se posicione a 0 de distancia a la derecha (a la derecha) */
+    top: 35px; /* A 35 px del top */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.faq .faq-group .faq-group-body {
+    display: none; /* Para que no se vea */
+}
+
+.faq .faq-group .faq-group-body.open {
+    display: block; /* Para que si se vea si la clase es open */
+}
+
+.faq ul.faq-menu{
+    max-width: 400px;
+    margin: auto; /* Para que este en el medio */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ddd;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faq ul.faq-menu li{
+   padding: 10px 20px;
+   border-radius: 5px;
+   text-align: center;
+}
+
+.faq ul.faq-menu li.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* Footer */
+
+.footer {
+    padding: 40px 0;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+}
+
+.footer ul li {
+    line-height: 2.5; /* Para separarlos mas el uno del otro */
+
+}
+
+.footer a {
+    color: #ccc;
+}
+
+.footer i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .card {
+    margin: 20px 10px 10px 0px;
+}
+
+.footer input[type="email"] {
+    width: 100%; /* 100% of its container */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;    
+
+}
+
+
 /* Utility Classes */
 /* Dado que hay containers de distintas dimensiones (unos mas angostos
 que otros), creamos subclase dentro de container (small container) */
@@ -84,6 +241,18 @@ que otros), creamos subclase dentro de container (small container) */
     padding: 0 15px /* idem */
 }
 
+/* Card */
+
+.card {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Fue movida de abajo hacia arriba pq sino no se ponia la card de
+premium en dark (tema de precedencia } */
+
 /* Button Classes */
 .btn {
     display: inline-block;
@@ -95,6 +264,7 @@ que otros), creamos subclase dentro de container (small container) */
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    text-align: center;
     transition: 0.5s;
 }
 
@@ -146,13 +316,13 @@ que otros), creamos subclase dentro de container (small container) */
     padding: 10px 0 40px;
 }
 
-.video-content {
+.video .video-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.video-preview {
+.video .video-preview {
     margin-bottom: 20px;
 }
 
@@ -196,7 +366,7 @@ que otros), creamos subclase dentro de container (small container) */
 .text-xl {
     font-size: 2.2rem; /* multiplicador de tamaño de fuente */
     line-height: 1.4;
-    font-weight: normal;
+    font-weight: 600;
     margin: 40px 0 20px;
 }
 
@@ -229,12 +399,12 @@ que otros), creamos subclase dentro de container (small container) */
 
 .bg-primary {
     background: var(--primary-color);
-    color: white;
+    color: #fff;
 }
 
 .bg-light {
     background: var(--light-color);
-    color: white;
+    color: #333;
 }
 
 .bg-dark {
@@ -247,11 +417,3 @@ que otros), creamos subclase dentro de container (small container) */
     color: white;
 }
 
-/* Card */
-
-.card {
-    background: white;
-    color: black;
-    border-radius: 10px;
-    padding: 20px;
-}
