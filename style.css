@@ -12,11 +12,12 @@
     --dark-color: #111;
 }
 
-    body {
+body {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     line-height: 1.5;
     background-color: white;
+    overflow-x: hidden; /* Para que no haya una barra de desplazamiento horizontal */
 }
 
 a {
@@ -417,3 +418,142 @@ premium en dark (tema de precedencia } */
     color: white;
 }
 
+/* Hamburguer Botton */
+
+.hamburguer-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000; /* Para que quede arriba de todo */
+}
+
+.hamburguer-button .hamburguer-line {
+    width: 30px;
+    height: 3px;
+    background: #333;
+    margin: 6px 0;
+}
+
+/* Mobile Menu */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* 300 pixeles afuera de la pagina */
+    width: 250px;
+    height: 100%;
+    z-index: 100; /* Para que este encima de todo menos el hamburguer button */
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) ;/* #000 con opacity de 0.2 */
+    transition: right 0.3s ease-in-out; /* Para que la propuedad right varíe en 0.3s con la transicion ease-in-out */
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu ul {
+    margin-top: 100px;
+    padding-right: 10px;
+}
+
+.mobile-menu ul li {
+    margin: 10px 0px;
+}
+
+.mobile-menu ul li a {
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+
+/* Media Queries --> Nos permite añadir CSS especificos a tamaños de pantalla */
+@media (max-width: 960px) {/* Todo CSS aca solo va a estar solo si la pantalla es de    menos de 960 px */
+    .text-xxl {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width: 670px) {/* Larger mobile devices */
+    .navbar .main-menu{
+        display:none;
+    }
+    .navbar .hamburguer-button {
+        display: block;
+    }
+
+    .hero .container {
+        background: url(./images/hero-bg-mobile.png) no-repeat;
+        background-size: 350px; /* Hay que probar valores hasta ver cual funciona */
+        background-position: bottom;
+        height: 770px; /* Para q entre todo agrandamos el container */
+    }
+
+    .hero .hero-content, .hero .hero-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero .hero-buttons .btn {
+        margin-bottom: 20px;
+        display: block;
+        width: 100%;
+    }
+
+    /* Text */
+
+    .text-xl {
+        font-size: 1.9rem;
+    }
+
+    .text-lg {
+        font-size: 1.5rem;
+    }
+
+    .text-md {
+        font-size: 1.1rem;
+    }
+
+    /* Testimonials */
+
+    .testimonials-heading {
+        max-width: 100%; /* Para q no se nos vayan de la pantalla */
+        text-align: center;
+    }
+
+    .testimonials .testimonials-grid, .footer .footer-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    .footer .card {
+        margin-right: 0; /* Para se extienda a lo largo de la pantalla */
+    }
+
+    .footer .footer-grid >div{ /* Los parent divs adentro del grid */
+        text-align: center;
+    }
+    /* Pricing */ /* La añadi yo pq como habia tocado para que premium sea mas grande q free ahora tengo q adaptar eso */
+
+    .pricing .pricing-heading {
+        padding-top: 60px;
+    }
+
+    .pricing .pricing-subheading {
+        margin-bottom: -20px;
+    }
+
+    .pricing .pricing-grid {
+        grid-template-columns: 1fr;
+        margin-top: 0px;
+    }
+}
+
+    
+
+@media(max-width: 500px){/* Smaller mobile devices */
+    .text-xxl {
+        font-size: 2rem;
+    }
+}
